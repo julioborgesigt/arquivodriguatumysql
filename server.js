@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // Configuração do banco de dados
-const sequelize = new Sequelize('mogxch_banco', 'mogxch_banco', '9j67QGs2Uc', {
+const sequelize = new Sequelize('yhoaen_banco', 'yhoaen_banco', 'tSpoSSxdDr', {
     host: 'localhost',
     dialect: 'mysql'
 });
