@@ -3,7 +3,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 
 const app = express();
-const port = 3306;
+const port = 3000;
 
 
 // Configuração do banco de dados
