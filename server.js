@@ -7,7 +7,7 @@ const port = 3306;
 
 
 // Configuração do banco de dados
-const sequelize = new Sequelize('yhoaen_banco', 'yhoaen_banco', 'tSpoSSxdDr', {
+const sequelize = new Sequelize('deyaoj_banco', 'deyaoj_banco', 'deyaoj_banco', {
     host: 'localhost',
     dialect: 'mysql'
 });
