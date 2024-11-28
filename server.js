@@ -3,12 +3,12 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 
 const app = express();
-const port = 3000;
+const port = 3306;
 
 
 // Configuração do banco de dados
 const sequelize = new Sequelize('deyaoj_banco', 'deyaoj_banco', 'deyaoj_banco', {
-    host: 'localhost',
+    host: 'mysql-ag-br1-20.conteige.cloud',
     dialect: 'mysql'
 });
 
