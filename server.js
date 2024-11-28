@@ -53,6 +53,15 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Rotas
+
+
+
+// Serve o arquivo HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 // Rota de Login
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
