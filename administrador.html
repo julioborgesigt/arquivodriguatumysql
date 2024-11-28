@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    
+    <!-- Referência ao arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Arquivo JS do administrador -->
+    <script src="script-admin.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar se o administrador está logado
+            if (!sessionStorage.getItem('adminLogado')) {
+                alert('Acesso negado. Faça login como administrador.');
+                window.location.href = '/login_admin.html'; // Redirecionar para o login
+            }
+        });
+    </script>
+    
+
+    
+</head>
+<body>
+    <div id="app-container">
+        <h1>Painel do Administrador</h1>
+
+        <!-- Pré-cadastro de usuários -->
+        <h2>Pré-Cadastrar Usuário</h2>
+        <form id="pre-cadastro-form">
+            <label for="pre-username">Usuário (8 caracteres alfanuméricos):</label>
+            <input type="text" id="pre-username" name="pre-username" maxlength="8" required>
+            <button type="button" onclick="preCadastrarUsuario()">Pré-Cadastrar Usuário</button>
+        </form>
+
+        <!-- Reset de senha -->
+        <h2>Resetar Senha</h2>
+        <form id="reset-senha-form">
+            <label for="reset-username">Usuário:</label>
+            <input type="text" id="reset-username" name="reset-username" maxlength="8" required>
+            <button type="button" onclick="resetarSenha()">Resetar Senha</button>
+        </form>
+
+        <div id="mensagem-admin"></div>
+
+        <button id="botao-logout"  onclick="logoutAdmin()">Logout</button>
+
+    </div>
+</body>
+</html>

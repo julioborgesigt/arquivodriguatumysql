@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Administrador</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script-admin.js" defer></script>
+</head>
+<body>
+    
+
+    <div id="auth-container">
+        <h2>Login de Administrador</h2>
+        <form id="auth-form">
+            <label for="admin-username">Usuário:</label>
+            <input type="text" id="admin-username" name="admin-username" required>
+
+            <label for="admin-password">Senha:</label>
+            <input type="password" id="admin-password" name="admin-password" required>
+
+            <button type="button" onclick="loginAdmin()">Entrar</button>
+
+            <!-- Botão index -->
+            <button type="button" id="admin-btn" onclick="window.location.href='/index.html'">Página Inicial</button>
+        </form>
+        
+    </div>
+</body>
+</html>

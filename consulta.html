@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Procedimentos</title>
+
+    <!-- Referência ao arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <h1>Consulta de Procedimentos</h1>
+
+        <table id="procedimentos-table">
+            <thead>
+                <tr>
+                    <th>Número do Procedimento</th>
+                    <th>Leituras</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Função para carregar os dados do banco.json
+        function carregarDados() {
+            fetch('/dados')
+                .then(response => response.json())
+                .then(data => {
+                    const tabela = document.querySelector('#procedimentos-table tbody');
+                    tabela.innerHTML = ''; // Limpar o conteúdo da tabela
+
+                    // Iterar pelos procedimentos
+                    data.procedimentos.forEach(procedimento => {
+                        const tr = document.createElement('tr');
+                        
+                        // Número do Procedimento
+                        const tdNumero = document.createElement('td');
+                        tdNumero.textContent = procedimento.numero;
+                        tr.appendChild(tdNumero);
+
+                        // Leituras
+                        const tdLeituras = document.createElement('td');
+                        if (procedimento.leituras && procedimento.leituras.length > 0) {
+                            const listaLeituras = document.createElement('ul');
+                            procedimento.leituras.forEach(leitura => {
+                                const li = document.createElement('li');
+                                li.textContent = `Usuário: ${leitura.usuario}, Data: ${leitura.data}, Hora: ${leitura.hora}`;
+                                listaLeituras.appendChild(li);
+                            });
+                            tdLeituras.appendChild(listaLeituras);
+                        } else {
+                            tdLeituras.textContent = "Nenhuma leitura registrada";
+                        }
+                        tr.appendChild(tdLeituras);
+
+                        tabela.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar os dados:', error));
+        }
+
+        // Carregar os dados ao carregar a página
+        document.addEventListener('DOMContentLoaded', carregarDados);
+    </script>
+</body>
+</html>

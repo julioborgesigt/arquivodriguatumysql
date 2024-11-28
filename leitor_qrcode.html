@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de QR Code</title>
+
+    <!-- Inclua os estilos CSS já existentes -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Inclua a biblioteca HTML5 QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+
+    <!-- Inclua o script JS -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="qr-reader"></div>
+
+    
+
+    <script>
+        // Iniciar o leitor de QR Code automaticamente ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            lerQRCode();  // Chama a função lerQRCode já existente
+        });
+    </script>
+</body>
+</html>
