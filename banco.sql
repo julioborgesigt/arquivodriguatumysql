@@ -1,4 +1,4 @@
-USE mogxch_banco;
+USE yhoaen_banco;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
